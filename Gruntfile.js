@@ -2,14 +2,47 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     
+    jshint: {
+      options: {
+        globals: {
+          jQuery: true
+        },
+        sub: true,
+        shadow: true
+      },
+      test: ['Gruntfile.js', 'src/*.js'],
+      build: ['build/*.js']
+    },
+    
     concat: {
+      options: {
+        stripBanners: true
+      },
       js: {
+        options: {
+          banner: '/* jshint sub:true, shadow:true */'
+        },
         src: 'src/*.js',
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'build/<%= pkg.name %>.js'
       },
       css: {
         src: 'src/*.css',
-        dest: 'dist/<%= pkg.name %>.css'
+        dest: 'build/<%= pkg.name %>.css'
+      }
+    },
+    
+    copy: {
+      build: {
+        expand: true,
+        flatten: true,
+        src: 'src/xbutton.png',
+        dest: 'build/'
+      },
+      dist: {
+        expand: true,
+        flatten: true,
+        src: 'src/xbutton.png',
+        dest: 'dist/'
       }
     },
     
@@ -31,9 +64,12 @@ module.exports = function (grunt) {
     }
   });
   
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   
-  grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
-}
+  grunt.registerTask('test', ['jshint:test']);
+  grunt.registerTask('default', ['jshint:test', 'concat', 'copy:build', 'jshint:build', 'uglify', 'cssmin', 'copy:dist']);
+};

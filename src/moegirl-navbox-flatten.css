@@ -1,0 +1,100 @@
+.moegirl-flatten-navbox-wrapper {
+  position: relative;
+  margin-top: 10px;
+  line-height: 1.7;
+  border: 1px solid #aaa;
+  padding: 3px;
+  clear: both;
+  
+  /* fix touch gray flicker */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.moegirl-flatten-navbox-subgroup {
+  border: 0 solid #e6e6ff;
+  border-left-width: 3px;
+}
+.moegirl-flatten-navbox-title {
+  font-weight: bold;
+  background: #e6e6ff;
+  margin-bottom: 2px;
+  padding-left: 1em;
+}
+.moegirl-flatten-navbox-nav {
+  font-size: 80%;
+  word-spacing: .8em;
+  border-top: 1px solid #aaa;
+}
+.moegirl-flatten-navbox-content {
+  padding-left: 1em;
+  margin-bottom: 2px;
+}
+.moegirl-flatten-navbox-content:last-child {
+  margin-bottom: 0;
+}
+
+/* level-1-title / navbox-title */
+.moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup {
+  border-color: #ccccff;
+  border-width: 0 3px 3px 3px;
+}
+.moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-title {
+  background: #ccccff;
+}
+
+/* level-2-title / navbox-title */
+.moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-content > .moegirl-flatten-navbox-subgroup {
+  border-color: #ddddff;
+}
+.moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-content > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-title {
+  background: #ddddff;
+}
+
+/* collapse */
+.moegirl-flatten-navbox-collapsible > .moegirl-flatten-navbox-title {
+  position: relative;
+}
+.moegirl-flatten-navbox-collapsible > .moegirl-flatten-navbox-content {
+  display: none;
+}
+.moegirl-flatten-navbox-open > .moegirl-flatten-navbox-content {
+  display: block;
+}
+.moegirl-flatten-navbox-collapsible > .moegirl-flatten-navbox-title {
+  padding-left: 3em;
+  margin-bottom: 0;
+  min-height: 20px;
+}
+.moegirl-flatten-navbox-open > .moegirl-flatten-navbox-title {
+  margin-bottom: 2px;
+}
+.moegirl-flatten-navbox-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  font-family: monospace;
+  color: #079b2b;
+  font-size: 110%;
+  width: 3.5em;
+}
+.moegirl-flatten-navbox-toggle > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.moegirl-flatten-navbox-collapsible > .moegirl-flatten-navbox-title > .moegirl-flatten-navbox-toggle > .moegirl-flatten-navbox-status-open {
+  display: none;
+}
+.moegirl-flatten-navbox-open > .moegirl-flatten-navbox-title > .moegirl-flatten-navbox-toggle > .moegirl-flatten-navbox-status-open {
+  display: inline;
+}
+.moegirl-flatten-navbox-collapsible > .moegirl-flatten-navbox-title > .moegirl-flatten-navbox-toggle > .moegirl-flatten-navbox-status-close {
+  display: inline;
+}
+.moegirl-flatten-navbox-open > .moegirl-flatten-navbox-title > .moegirl-flatten-navbox-toggle > .moegirl-flatten-navbox-status-close {
+  display: none;
+}

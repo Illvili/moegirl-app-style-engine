@@ -1,0 +1,42 @@
+.mw-collapsible.wikitable {
+  display:table;
+}
+.mw-collapsible.wikitable img {
+  max-width:100%;
+}
+.mw-collapsible > tbody > tr:first-child > th {
+  position:relative;
+  padding-left:3em;
+}
+.mw-collapsible.mw-collapsed > tbody > tr:nth-child(n+2) {
+  display:none;
+}
+.collapse-toggle {
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  font-family:monospace;
+  color:#ba0000;
+  font-size:90%;
+  width:3.5em;
+}
+.collapse-toggle > span {
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  text-align:center;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+}
+.mw-collapsible.mw-collapsed > tbody > tr > th > .collapse-toggle > .collapse-status-open {
+  display:none;
+}
+.mw-collapsible.mw-collapsed > tbody > tr > th > .collapse-toggle > .collapse-status-close,
+.mw-collapsible > tbody > tr > th > .collapse-toggle > .collapse-status-open {
+  display:inline;
+}
+.mw-collapsible > tbody > tr > th > .collapse-toggle > .collapse-status-close {
+  display:none;
+}
