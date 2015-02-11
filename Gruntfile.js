@@ -37,12 +37,6 @@ module.exports = function (grunt) {
         flatten: true,
         src: 'src/xbutton.png',
         dest: 'build/'
-      },
-      dist: {
-        expand: true,
-        flatten: true,
-        src: 'src/xbutton.png',
-        dest: 'dist/'
       }
     },
     
@@ -56,9 +50,20 @@ module.exports = function (grunt) {
       }
     },
     
+    imageEmbed: {
+      dist: {
+        options: {
+          deleteAfterEncoding : false,
+          maxImageSize: 0
+        },
+        src: '<%= concat.css.dest %>',
+        dest: 'build/<%= pkg.name %>.embed.css'
+      }
+    },
+    
     cssmin: {
       dist: {
-        src: '<%= concat.css.dest %>',
+        src: '<%= imageEmbed.dist.dest %>',
         dest: 'dist/<%= pkg.name %>.min.css'
       }
     }
@@ -69,7 +74,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-image-embed');
   
   grunt.registerTask('test', ['jshint:test']);
-  grunt.registerTask('default', ['jshint:test', 'concat', 'copy:build', 'jshint:build', 'uglify', 'cssmin', 'copy:dist']);
+  grunt.registerTask('default', ['jshint:test', 'concat', 'copy:build', 'jshint:build', 'uglify', 'imageEmbed', 'cssmin']);
 };
