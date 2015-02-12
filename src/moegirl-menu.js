@@ -54,6 +54,10 @@ $(function () {
 
   var moegirl_menu_mask = $('<div id="moegirl-menu-mask" />');
   moegirl_menu_mask.on('touchstart', function (event) {
+    if ($(event.target).is(this)) {
+      $('body').removeClass('moegirl-menu-show');
+    }
+    
     return false;
   });
   $('body').append(moegirl_menu_mask);
