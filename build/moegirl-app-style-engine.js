@@ -261,6 +261,9 @@ $(function () {
     
     $(selector).each(function () {
       var navbox_el = $(this);
+      // http://zh.moegirl.org/LoveLive! .navbox in .navbox skip
+      if (navbox_el.parents('.navbox').length) return;
+
       var data = navbox_data(navbox_el);
       var flatten_el = navbox_build(data);
       
@@ -278,4 +281,8 @@ $(function () {
   }
 
   navbox();
+  
+  // http://zh.moegirl.org/LoveLive! .navbox in .navbox build
+  var nav_in_nav = $('.' + class_prefix + 'wrapper .navbox');
+  if (nav_in_nav.length) navbox(nav_in_nav);
 });
