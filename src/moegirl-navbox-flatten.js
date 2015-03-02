@@ -46,12 +46,12 @@ $(function () {
             // clear line-height of '日本2014年冬季动画' in http://zh.moegirl.org/Template:%E6%97%A5%E6%9C%AC2014%E5%B9%B4%E5%8A%A8%E7%94%BB
             
             DATA['title'] = navbox_title_el.html();
-          // } else {
-          //  DATA['title'] = headline_el.html();
-          // }
-        } else {
-          DATA['title'] = el.html();
-        }
+          } else {
+           DATA['title'] = headline_el.html();
+          }
+        // } else {
+        //   DATA['title'] = el.html();
+        // }
       } // /check has navbox-title
       
       // get all subgroup
