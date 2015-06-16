@@ -1,6 +1,6 @@
 {
   "name": "moegirl-app-style-engine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Moegirlpedia APP style engine.",
   "main": "index.js",
   "repository": {
