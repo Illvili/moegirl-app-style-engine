@@ -10,12 +10,12 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .moegirl-flatten-navbox-subgroup {
-  border: 0 solid #e6e6ff;
+  border: 0 solid #e6f6e6;
   border-left-width: 3px;
 }
 .moegirl-flatten-navbox-title {
   font-weight: bold;
-  background: #e6e6ff;
+  background: #e6f6e6;
   margin-bottom: 2px;
   padding-left: 1em;
 }
@@ -34,19 +34,19 @@
 
 /* level-1-title / navbox-title */
 .moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup {
-  border-color: #ccccff;
+  border-color: #a5e4a5;
   border-width: 0 3px 3px 3px;
 }
 .moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-title {
-  background: #ccccff;
+  background: #a5e4a5;
 }
 
 /* level-2-title / navbox-title */
 .moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-content > .moegirl-flatten-navbox-subgroup {
-  border-color: #ddddff;
+  border-color: #c0ecc0;
 }
 .moegirl-flatten-navbox-wrapper > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-content > .moegirl-flatten-navbox-subgroup > .moegirl-flatten-navbox-title {
-  background: #ddddff;
+  background: #c0ecc0;
 }
 
 /* collapse */

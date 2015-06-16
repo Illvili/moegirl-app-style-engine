@@ -128,6 +128,11 @@ $(function () {
           } else {
            DATA['title'] = headline_el.html();
           }
+          // 增加navbox边框颜色 http://zh.moegirl.org/%E6%99%AE%E9%80%9ADISCO
+          var style = navbox_filter_style(el);
+          if (!!style) {
+            DATA['titleStyle'] = style;
+          }
         // } else {
         //   DATA['title'] = el.html();
         // }
@@ -212,6 +217,11 @@ $(function () {
       
       if (!!subgroup_data.titleStyle) {
         title_el.attr('style', subgroup_data.titleStyle);
+        
+        // 增加navbox边框颜色 http://zh.moegirl.org/%E6%99%AE%E9%80%9ADISCO
+        if (-1 !== subgroup_data.titleStyle.indexOf('background')) {
+          parent.css('border-color', title_el.css('background-color'));
+        }
       }
       
       if (!!subgroup_data.collapsible) {
